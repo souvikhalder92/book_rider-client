@@ -26,7 +26,7 @@ const Services = () => {
                 }
             </div>
             <div className='mt-5 text-center mb-5'>
-        <button className="btn btn-outline btn-error"><Link to='/allservices'>More Books</Link></button>
+            <Link to='/allservices'><button className="btn btn-outline btn-error">More Books</button></Link>
         </div>
  
         </div>

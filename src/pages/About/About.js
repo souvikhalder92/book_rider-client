@@ -13,8 +13,9 @@ const About = () => {
         <p className='text-3xl text-yellow-600 font-bold'>About Us</p>
       <h1 className="my-4 text-5xl font-bold">We provide <br/> our
        best service.<br/></h1>
-      <p className="py-6">This is for books lover.We try our <br/> best for people.</p>
-      <button className="btn btn-primary">Get More Info</button>
+      <p className="py-3">This is for books lover.We try our <br/> best for people.</p>
+      <p>Here people can review the books <br/> accordingly their thought.</p>
+      <button className="btn btn-primary mt-3">Get More Info</button>
     </div>
   </div>
 </div>
