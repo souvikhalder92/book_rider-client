@@ -30,9 +30,9 @@ const Header = () => {
             {
                   user?.uid ? 
                   <>
-                     <li className='text-xl text-yellow-600'><Link to="/itemreview">My Reviews</Link></li>
+                     <li className='text-xl text-yellow-600'><Link to="/reviews">My Reviews</Link></li>
                     <li className='text-xl text-yellow-600'><Link to="/itemadd">Add a Service</Link></li>
-                    <button onClick={handleLogOut} className='text-xl text-yellow-600'><Link to="/">Logout</Link></button>
+                    <button onClick={handleLogOut} className='text-xl text-yellow-600'><Link to="/home">Logout</Link></button>
                   </>
                   :
                   <li className='text-xl text-yellow-600'><Link to="/login">Login</Link></li>

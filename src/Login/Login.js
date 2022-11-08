@@ -75,7 +75,7 @@ const Login = () => {
             <div className="mb-2">
              <p className='text-left text-red-400'>{error}</p>            
             </div>
-            <button onClick={notify} type="submit" className="btn btn-secondary text-slate-800 font-bold mx-32">
+            <button onClick={notify} type="submit" className="btn btn-success text-slate-800 font-bold mx-32">
             Submit 
             </button>
           <ToastContainer/>

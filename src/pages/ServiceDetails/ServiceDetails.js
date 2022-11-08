@@ -1,14 +1,55 @@
-import React from 'react';
-import { FaStar } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { FaArrowRight, FaStar } from 'react-icons/fa';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const ServiceDetails = () => {
-    const {name,img,description,author,price,ratings,reviews} = useLoaderData();
+    const {_id,name,img,description,author,price,ratings,reviews} = useLoaderData();
+    const {user}  = useContext(AuthContext);
+    const handleReview = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const names = `${form.firstName.value} ${form.lastName.value}`;
+        const email = user?.email || 'unregistered';
+        const message = form.message.value;
+
+
+        const review = {
+            service: _id,
+            bookName: name,
+            customer: names,
+            email,
+            message
+        }
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+               
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    alert('Review Added successfully')
+                    form.reset();
+                    
+                }
+            })
+            .catch(er => console.error(er));
+
+           
+          
+
+
+    }
+
+    
     return (
         <div>
         <div className="card w-72 lg:w-8/12 bg-base-200 shadow-xl mx-auto  mt-6 mb-5">
-      
-  <div className='w-10/12'>
       
 <figure className="px-10 pt-6">
 
@@ -27,16 +68,39 @@ const ServiceDetails = () => {
 </div> 
 <p  className='font-semibold mr-3'>{ratings}</p>
 <p  className='font-semibold ml-3'>Reviews: {reviews}k</p>
+<p className='font-semibold ml-3'>Price: ${price}</p>
 </div>
-<div className="card-actions">
 
 </div>
-</div>
-</div>
+
 </div>
 
 <div className='App'>
    <h1 className='text-yellow-600 font-bold text-3xl'>All Reviews</h1> 
+ 
+   {
+    user?.uid ? 
+    
+    <>
+       <form onSubmit={handleReview} className="mt-5">
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:border  lg:p-5   lg:border-slate-300 hover:border-stone-400 '>
+                    <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
+                    <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
+                    <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
+                    <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Review" required></textarea>
+                </div>
+              
+                 <div className='text-center mb-5'>
+                <input className='btn mt-4' type="submit" value="Submit Your Review" />
+                </div>
+            </form>
+    </>
+    :
+    <>
+   
+   <p className='text-2xl mb-5'>Please Login To Add Your Review.<Link to='/login' className='text-orange-700 font-semibold'>Login Here...</Link></p>
+   </>
+   }
 </div>
 
 

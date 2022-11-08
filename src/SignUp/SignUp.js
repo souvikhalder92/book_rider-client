@@ -33,7 +33,7 @@ const SignUp = () => {
     }
     return (
         <div>
-              <div className="w-11/12 lg:w-96 mx-auto shadow-2xl p-8 rounded-md mt-4 bg-gray-300 mb-6">
+              <div className="w-11/12 lg:w-96 mx-auto shadow-2xl p-8 rounded-md mt-4 bg-gray-300 mb-10">
         <h3 className='text-center text-4xl font-bold text-sky-800 mb-5'>Register</h3>
           <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -75,7 +75,7 @@ const SignUp = () => {
             <div className="mb-2">
              <p className='text-left text-red-400'>{error}</p>            
             </div>
-            <button type="submit" className="btn btn-secondary text-slate-800 font-bold ml-32">
+            <button type="submit" className="btn btn-success text-slate-800 font-bold ml-32">
              Submit
             </button>
           </form>

@@ -14,7 +14,7 @@ const ServiceCard = ({service}) => {
           <p>{description.slice(0,100)}...</p>
           <div>
             <div className='flex ml-5'>
-            <p>Price: {price}</p>
+            <p>Price: ${price}</p>
                 <p>Reviews: {reviews}k</p>
                <FaStar className='mr-1 mt-1 text-sm text-amber-300'></FaStar><p>{ratings}</p>  
                 </div>
