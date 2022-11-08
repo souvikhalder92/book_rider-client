@@ -19,7 +19,7 @@ const Header = () => {
           <ul className="menu lg:menu-horizontal p-0">
             <li className='text-xl text-yellow-600'><Link to="/home">Home</Link></li>
            
-            <li className='text-xl text-yellow-600'><Link to="/">Blog</Link></li>
+            <li className='text-xl text-yellow-600'><Link to="/blog">Blog</Link></li>
           </ul>
         </div>
       </div>

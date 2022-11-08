@@ -1,6 +1,6 @@
 [
     {
-      "id": "1",
+      
       "name": "Harry Potter",
       "img": "https://i.ibb.co/7RGZ1Bd/the-hogwarts-library-collection.jpg",
       "description": "The genesis of Harry Potter goes back to 1990 when J.K. Rowling was caught on a delayed train somewhere between Manchester and Kings Cross Station in London. Seven years and many submissions to publishers later, Harry Potter and the Philosopher's Stone finally saw print, swiftly becoming a word-of-mouth hit. Within twelve months, under the Bloomsbury imprint, the Harry Potter series became a publishing phenomena, spawning an entire universe of magic.",
@@ -13,7 +13,7 @@
 
     },
     {
-        "id": "2",
+        
         "name": "A Night To Remember",
         "img": "https://i.ibb.co/HphR9M1/9781453238417.jpg",
         "description": "First published in 1955, A Night to Remember remains a completely riveting account of the Titanic's fatal collision and the behavior of the passengers and crew, both noble and ignominious. Some sacrificed their lives, while others fought like animals for their own survival. Wives beseeched husbands to join them in lifeboats; gentlemen went taut-lipped to their deaths in full evening dress; and hundreds of steerage passengers, trapped below decks, sought help in vain. ",
@@ -25,7 +25,7 @@
         "discount":50
       },
       {
-        "id": "3",
+        
         "name": "William Shakespeare",
         "img": "https://i.ibb.co/NNT3K4M/711-Tx-X8cdl-L.jpg",
         "description": "Romeo and Juliet, play by William Shakespeare, written about 1594–96 and first published in an unauthorized quarto in 1597. An authorized quarto appeared in 1599, substantially longer and more reliable. A third quarto, based on the second, was used by the editors of the First Folio of 1623. The characters of Romeo and Juliet have been depicted in literature, music, dance, and theatre. The appeal of the young hero and heroine—whose families, the Montagues and the Capulets, respectively, are implacable enemies—is such that they have become, in the popular imagination, the representative type of star-crossed lovers.",
@@ -37,7 +37,7 @@
         "discount":20
       },
       {
-        "id": "4",
+        
         "name": "Cyber Security",
         "img": "https://i.ibb.co/Z8t8KGk/9781909621862.jpg",
         "description":"The ghost of the King of Denmark tells his son Hamlet to avenge his murder by killing the new king, Hamlet's uncle. Hamlet feigns madness, contemplates life and death, and seeks revenge. His uncle, fearing for his life, also devises plots to kill Hamlet. The play ends with a duel, during which the King, Queen, Hamlet's opponent and Hamlet himself are all killed.",
@@ -49,7 +49,7 @@
         "discount":10
       },
       {
-        "id": "5",
+        
         "name": "A Brief History of Time",
         "img": "https://i.ibb.co/DGPpPZC/0e4a3b402a182777a4b3420efbf64be3.jpg",
         "description":"In the ten years since its publication in 1988, Stephen Hawking's classic work has become a landmark volume in scientific writing, with more than nine million copies in forty languages sold worldwide. That edition was on the cutting edge of what was then known about the origins and nature of the universe. But the intervening years have seen extraordinary advances in the technology of observing both the micro- and the macrocosmic worlds.",
@@ -62,7 +62,7 @@
 
       },
       {
-        "id": "6",
+        
         "name": "Nineteen Eighty-Four",
         "img": "https://i.ibb.co/mbdxtzV/51-HKO6-C5-A5-L.jpg",
         "description":"This Specialization explores several aspects of the new digital marketing environment, including topics such as digital marketing analytics, search engine optimization, social media marketing, and 3D Printing. When you complete the Digital Marketing Specialization you will have a richer understanding of the foundations of the new digital marketing landscape and acquire a new set of stories, concepts, and tools to help you digitally create, distribute, promote and price products and services.",
