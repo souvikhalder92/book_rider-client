@@ -24,6 +24,7 @@ const SignUp = () => {
         console.log(user);
         form.reset();
         setError('');
+        handleUpdate(name,photoURL);
         navigate('/home');
       })
       .catch(e => {
@@ -31,6 +32,16 @@ const SignUp = () => {
         setError(e.message)
        })
     }
+    const handleUpdate = (name,photoURL) =>{
+        const profile = {
+          displayName: name,
+          photoURL: photoURL
+        }
+        updateUser(profile)
+        .then(() => {})
+        .catch(error => console.error(error));
+    
+      }
     return (
         <div>
               <div className="w-11/12 lg:w-96 mx-auto shadow-2xl p-8 rounded-md mt-4 bg-gray-300 mb-10">
