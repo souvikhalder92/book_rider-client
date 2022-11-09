@@ -60,10 +60,10 @@ const AddService = () => {
 
     }
     return (
-        <div className='mt-3'>
-            <p className='text-center font bold text-2xl mb-3'>Add a Service.{service.length}</p>
+        <div className='mt-3 mb-24'>
+            <p className='text-center font bold text-2xl mb-3'>Add a Service</p>
        
-        <form onSubmit={handleService} className="mt-5">
+        <form onSubmit={handleService} className="mt-10">
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:border  lg:p-5   lg:border-slate-300 hover:border-stone-400 '>
             <input name="bookName" type="text" placeholder="Book Name" className="input input-ghost w-full  input-bordered" required/>
             <input name="authorName" type="text" placeholder="Author Name" className="input input-ghost w-full  input-bordered" required/>

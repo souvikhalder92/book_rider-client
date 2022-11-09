@@ -97,7 +97,7 @@ const ServiceDetails = () => {
 
 <div className='App'>
    <h1 className='text-yellow-600 font-bold text-3xl'>All Reviews: {review.length}</h1> 
-   <div className='grid grid-cols-3 gap-5 mt-5 mb-8'>
+   <div className='grid grid-1 lg:grid-cols-3 gap-5 mt-5 mb-8'>
    {
        
         review.map(review => <AllReviews
@@ -118,7 +118,7 @@ const ServiceDetails = () => {
                     <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                     <input name="photoURL" type="text" placeholder="Your imageURL" defaultValue={user?.photoURL} className="input input-ghost w-full  input-bordered" readOnly />
-                    <textarea name="message" className="textarea textarea-bordered h-24 w-full mx-60" placeholder="Your Review" required></textarea>
+                    <textarea name="message" className="textarea textarea-bordered h-24 w-full lg:mx-60 mx-0" placeholder="Your Review" required></textarea>
                 </div>
               
                  <div className='text-center mb-5'>
