@@ -14,14 +14,13 @@ const ServiceDetails = () => {
     const url = `http://localhost:5000/reviews`;
 
     useEffect(() =>{
-       fetch(url)
-       .then(res => res.json())
-       .then(data => 
-        {
-            
-            setReview(data)
+       fetch(url,{
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`
         }
-        )
+       })
+       .then(res => res.json())
+       .then(data => setReview(data) )
 
     },[user?.email])
     const handleReview = (event) =>{
@@ -45,7 +44,7 @@ const ServiceDetails = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-               
+                
             },
             body: JSON.stringify(review)
         })

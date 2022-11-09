@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ServiceAdded from '../pages/AddService/ServiceAdded';
 import ServiceCard from './ServiceCard';
 
 const AllServices = () => {
@@ -24,6 +25,7 @@ const AllServices = () => {
                     ></ServiceCard>)
                 }
             </div>
+         
           
  
         </div>
