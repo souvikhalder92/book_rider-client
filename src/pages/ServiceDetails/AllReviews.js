@@ -7,7 +7,7 @@ const AllReviews = ({review}) => {
         photoURL} = review;
     return (
         <div className="card w-full lg:w-96 bg-gray-100 shadow-xl">
-        <figure><img className='w-full h-48' src={photoURL} alt="Course" /></figure>
+        <figure><img className='w-20 h-20 rounded-full mt-5' src={photoURL} alt="review" /></figure>
         <div className="card-body">
           <h2 className="font-semibold text-center text-2xl">{customer}</h2>
          

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FaArrowRight, FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import AllReviews from './AllReviews';
 
@@ -15,7 +16,12 @@ const ServiceDetails = () => {
     useEffect(() =>{
        fetch(url)
        .then(res => res.json())
-       .then(data => setReview(data))
+       .then(data => 
+        {
+            
+            setReview(data)
+        }
+        )
 
     },[user?.email])
     const handleReview = (event) =>{
@@ -47,7 +53,7 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
-                    alert('Review Added successfully')
+                    toast('Review Added successfully')
                     form.reset();
                     
                 }
@@ -91,11 +97,13 @@ const ServiceDetails = () => {
 
 <div className='App'>
    <h1 className='text-yellow-600 font-bold text-3xl'>All Reviews: {review.length}</h1> 
-   <div className='grid grid-cols-3 gap-5 mt-5 mb-5'>
+   <div className='grid grid-cols-3 gap-5 mt-5 mb-8'>
    {
+       
         review.map(review => <AllReviews
             key={review._id}
             review={review}></AllReviews>)
+    
 
    }
    </div>
@@ -110,11 +118,12 @@ const ServiceDetails = () => {
                     <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                     <input name="photoURL" type="text" placeholder="Your imageURL" defaultValue={user?.photoURL} className="input input-ghost w-full  input-bordered" readOnly />
-                    <textarea name="message" className="textarea textarea-bordered h-24 w-full mx-52" placeholder="Your Review" required></textarea>
+                    <textarea name="message" className="textarea textarea-bordered h-24 w-full mx-60" placeholder="Your Review" required></textarea>
                 </div>
               
                  <div className='text-center mb-5'>
                 <input className='btn mt-4' type="submit" value="Submit Your Review" />
+                <ToastContainer/>
                 </div>
             </form>
     </>
