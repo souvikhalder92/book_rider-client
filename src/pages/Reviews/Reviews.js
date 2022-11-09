@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import ReviewsRow from './ReviewsRow';
 
 const Reviews = () => {
     const {user} = useContext(AuthContext);
     const [review,setReview] = useState([]);
+    useTitle('My Reviews');
    
     const url = `http://localhost:5000/reviews?email=${user?.email}`;
 

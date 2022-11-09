@@ -3,12 +3,15 @@ import { FaArrowRight, FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import AllReviews from './AllReviews';
 
 const ServiceDetails = () => {
     const {_id,name,img,description,author,price,ratings,reviews} = useLoaderData();
     const {user}  = useContext(AuthContext);
     console.log(user);
+    
+    useTitle('Details');
     const [review,setReview] = useState([]);
 
     const url = `http://localhost:5000/reviews`;
@@ -30,6 +33,8 @@ const ServiceDetails = () => {
         const email = user?.email || 'unregistered';
         const photoURL = user?.photoURL;
         const message = form.message.value;
+        const d = new Date();
+        var time = d.getTime();
 
 
         const review = {
@@ -38,7 +43,8 @@ const ServiceDetails = () => {
             customer: names,
             email,
             photoURL,
-            message
+            message,
+            time
         }
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -99,7 +105,7 @@ const ServiceDetails = () => {
    <div className='grid grid-1 lg:grid-cols-3 gap-5 mt-5 mb-8'>
    {
        
-        review.map(review => <AllReviews
+        review.sort((a,b) => a.time > b.time ? -1 : 1).map(review => <AllReviews
             key={review._id}
             review={review}></AllReviews>)
     

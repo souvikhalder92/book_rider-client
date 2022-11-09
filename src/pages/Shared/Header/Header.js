@@ -17,15 +17,15 @@ const Header = () => {
     .catch(error => console.log(error))
   }
     return (
-        <div className="navbar h-20 bg-neutral ">
-        <div className="flex-1">
+        <div className="navbar  lg:h-20 bg-neutral ">
+        <div className="flex lg:flex-1 ">
        
         <FaAccusoft  className="text-4xl font-bold text-yellow-600 ml-2"></FaAccusoft><Link to='/' className="text-3xl font-bold text-yellow-600 ml-2" >Book Rider</Link>
         
         </div>
        
-        <div className="block lg:flex mr-5">
-          <ul className="menu lg:menu-horizontal p-0">
+        <div className="flex mr-96 lg:mr-5 mt-10 lg:mt-0">
+          <ul className="menu menu-horizontal p-0">
             <li className='text-xl text-yellow-600'><Link to="/home">Home</Link></li>
             {
                   user?.uid ? 

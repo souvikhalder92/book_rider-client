@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 import AllServices from '../../Services/AllServices';
 
 const AddService = () => {
     const {_id}  = useLoaderData();
     const [service,setService] = useState([]);
+    useTitle('Add a Service');
    
     const url = `http://localhost:5000/allservices`;
 
@@ -61,7 +63,7 @@ const AddService = () => {
     }
     return (
         <div className='mt-3 mb-24'>
-            <p className='text-center font bold text-2xl mb-3'>Add a Service</p>
+            <p className='text-center font bold text-4xl mb-3'>Add a Service</p>
        
         <form onSubmit={handleService} className="mt-10">
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:border  lg:p-5   lg:border-slate-300 hover:border-stone-400 '>

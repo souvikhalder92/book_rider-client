@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const SignUp = () => {
     const navigate = useNavigate();
     const [error,setError] = useState('');
   
     const {createUser,updateUser} = useContext(AuthContext);
+    useTitle('Register');
   
     const handleSubmit = (event) =>{
       event.preventDefault();

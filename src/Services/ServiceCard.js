@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaArrowRight, FaStar } from 'react-icons/fa';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
@@ -7,7 +9,13 @@ const ServiceCard = ({service}) => {
     return (
 
 <div className="card w-full lg:w-96 bg-gray-100 shadow-xl">
-        <figure><img className='w-full h-48' src={img} alt="Course" /></figure>
+<PhotoProvider>
+      <PhotoView src={img}>
+      <figure><img className='w-full h-52' src={img} alt="Course" /></figure>
+      </PhotoView>
+    </PhotoProvider>
+  
+      
         <div className="card-body">
           <h2 className="font-semibold text-center text-2xl">{name}</h2>
           <p>Author: <span className='font-semibold'>{author}</span> </p>

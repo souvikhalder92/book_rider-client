@@ -4,12 +4,14 @@ import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
     const [error,setError] = useState('');
     const navigate = useNavigate();  
     const {providerLogin,signIn } = useContext(AuthContext);
     const location = useLocation();
+    useTitle('Login');
 
     const from = location.state?.from?.pathname || '/';
 
@@ -67,7 +69,7 @@ const Login = () => {
         }
     return (
         <div>
-        <div className="w-10/12 lg:w-96 mx-auto shadow-2xl p-8 rounded-md mt-14 bg-gray-300 mb-20">
+        <div className="w-10/12 lg:w-96 mx-5 lg:mx-auto shadow-2xl p-8 rounded-md mt-14 bg-gray-300 mb-20">
         <h3 className='text-center text-4xl font-bold text-sky-800 mb-5'>Login</h3>
           <form onSubmit={handleSubmitLogin}>
             <div className="mb-3">
