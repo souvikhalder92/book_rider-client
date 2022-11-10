@@ -77,7 +77,7 @@ const AddService = () => {
         </div>
       
          <div className='text-center mb-5'>
-        <input className='btn bg-orange-400 text-white mt-4' type="submit" value="Add service" />
+        <input className='btn bg-orange-400 text-white mt-4' type="submit" value="Add Service" />
         <ToastContainer/>
         </div>
     </form>
