@@ -7,22 +7,24 @@ import useTitle from '../../hooks/useTitle';
 import AllReviews from './AllReviews';
 
 const ServiceDetails = () => {
-    const {_id,name,img,description,author,price,ratings,reviews,service} = useLoaderData();
+    const {_id,name,img,description,author,price,ratings,reviews} = useLoaderData();
+  
   
     const {user}  = useContext(AuthContext);
     
     useTitle('Details');
     const [review,setReview] = useState([]);
     console.log(review);
-
-    const url = `https://book-rider-server.vercel.app/reviews`;
-
+    
+ 
     useEffect(() =>{
-       fetch(url)
-       .then(res => res.json())
-       .then(data => setReview(data) )
+        fetch(`https://book-rider-server.vercel.app/reviews?service=${_id}`)
+        .then(res => res.json())
+        .then(data => setReview(data) )
+ 
+     },[review])
+   
 
-    },[review])
     const handleReview = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -43,6 +45,7 @@ const ServiceDetails = () => {
             message,
             time
         }
+        
         fetch('https://book-rider-server.vercel.app/reviewsadd', {
             method: 'POST',
             headers: {
