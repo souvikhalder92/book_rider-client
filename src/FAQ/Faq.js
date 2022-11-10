@@ -4,8 +4,8 @@ const Faq = () => {
     return (
         <div>
                <div>
-            <h1 className='mt-16 font-bold text-4xl text-center'>Frequently Asked Questions</h1>
-            <div className='w-3/4 mx-auto mt-12 mb-20'>
+            <h1 className='mt-16 font-bold text-4xl text-center text-yellow-600'>Frequently Asked Questions</h1>
+            <div className='w-3/4 lg:mx-auto mt-12 mb-20 mx-16'>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
   <div className="collapse-title text-xl font-medium">
   1. May I purchase a magazine subscription by check or money order?

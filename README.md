@@ -1,7 +1,7 @@
 # Project Name:
  Book Rider
 # Live Link:
- Live Demo: baki
+ Live Demo: https://book-rider.web.app/
 # Project Description
 ## Technologies:
 * Tailwind CSS
@@ -14,7 +14,8 @@
 * Nodejs
 * Expressjs
 * Firebase Authentication
-* MongoDB
+* MongoDB(CRUD Operation)
+* JWT Token
 ## Features:
 * Dynamic and full stack website with Firebase Authentication System.
 * This website is fully functional and fully responsive for user.

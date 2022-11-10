@@ -5,7 +5,7 @@ import s6 from  '../../img/s6.jpg';
 
 const Banner = () => {
     return (
-      <div className='h-3/4 w-10/12 mx-auto'>
+      <div className='h-3/4 w-10/12 lg:mx-auto mx-8'>
         <div className="carousel mt-5 mb-0">
         <div id="slide1" className="carousel-item relative w-full ">
           <img src={s6} className="w-full   object-fill rounded-xl" />

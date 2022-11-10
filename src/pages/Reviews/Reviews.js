@@ -6,11 +6,12 @@ import useTitle from '../../hooks/useTitle';
 import ReviewsRow from './ReviewsRow';
 
 const Reviews = () => {
-    const {user} = useContext(AuthContext);
+    const {user,logOut} = useContext(AuthContext);
     const [review,setReview] = useState([]);
     useTitle('My Reviews');
+    console.log(review);
    
-    const url = `http://localhost:5000/reviewsadd?email=${user?.email}`;
+    const url = `https://book-rider-server.vercel.app/reviewsadd?email=${user?.email}`;
 
     useEffect(() =>{
        fetch(url,{
@@ -18,16 +19,28 @@ const Reviews = () => {
             authorization: `Bearer ${localStorage.getItem('token')}`
         }
        })
-       .then(res => res.json())
-       .then(data => setReview(data))
+       .then(res => {
+        if (res.status === 401 || res.status === 403) {
+            return logOut();
+        }
+        return res.json();
+    })
+    .then(data => {
+        setReview(data);
+    })
+    
 
-    },[user?.email])
+
+    },[user?.email,logOut])
+
+
+
     
     const handleDelete = (_id) =>{
         const proceed = window.confirm('Are you sure to delete this?');
         if(proceed)
         {
-            fetch(`http://localhost:5000/reviewsadd/${_id}`,{
+            fetch(`https://book-rider-server.vercel.app/reviewsadd/${_id}`,{
                 method: 'DELETE'
 
             })
@@ -48,7 +61,7 @@ const Reviews = () => {
 
     }
     const handleStatusUpdate = (_id) => {
-        fetch(`http://localhost:5000/reviewsadd/${_id}`, {
+        fetch(`https://book-rider-server.vercel.app/reviewsadd/${_id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json'
@@ -74,8 +87,8 @@ const Reviews = () => {
            'There is No Review' : 
            <>
            <p className='text-2xl font-bold'>Total Reviews: {review.length}</p>
-           <div className="overflow-x-auto w-full mt-5 mb-64">
-                <table className="table w-full">
+           <div className="lg:overflow-x-auto w-20 lg:w-full mt-5 mb-64">
+                <table className="lg:table w-full">
                     <thead>
                         <tr>
                             <th>

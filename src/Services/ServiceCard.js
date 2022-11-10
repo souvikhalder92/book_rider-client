@@ -8,7 +8,7 @@ const ServiceCard = ({service}) => {
     const {_id,name,description,price,author,ratings,reviews,img} = service;
     return (
 
-<div className="card w-full lg:w-96 bg-gray-100 shadow-xl">
+<div className="card w-3/4 lg:w-96 bg-gray-100 shadow-xl mx-auto lg:mx-0">
 <PhotoProvider>
       <PhotoView src={img}>
       <figure><img className='w-full h-52' src={img} alt="Course" /></figure>
@@ -21,7 +21,7 @@ const ServiceCard = ({service}) => {
           <p>Author: <span className='font-semibold'>{author}</span> </p>
           <p>{description.slice(0,100)}...</p>
           <div>
-            <div className='flex ml-5'>
+            <div className='flex lg:ml-5 '>
             <p>Price: ${price}</p>
                 <p>Reviews: {reviews}k</p>
                <FaStar className='mr-1 mt-1 text-sm text-amber-300'></FaStar><p>{ratings}</p>  

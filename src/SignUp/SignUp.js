@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 
@@ -88,10 +88,16 @@ const SignUp = () => {
             <div className="mb-2">
              <p className='text-left text-red-400'>{error}</p>            
             </div>
-            <button type="submit" className="btn btn-success text-slate-800 font-bold ml-32">
+            <button type="submit" className="btn btn-success text-slate-800 font-bold ml-20 lg:ml-32">
              Submit
             </button>
           </form>
+
+          <p className="text-slate-900 font-semibold mt-3 ml-2 lg:ml-12">
+              Already Have an Account? <Link to="/Login" className="text-sky-800">
+               Login
+              </Link>
+            </p>
           
            
         </div>

@@ -9,7 +9,7 @@ const AddService = () => {
     const [service,setService] = useState([]);
     useTitle('Add a Service');
    
-    const url = `http://localhost:5000/allservices`;
+    const url = `https://book-rider-server.vercel.app/allservices`;
 
     useEffect(() =>{
        fetch(url)
@@ -41,7 +41,7 @@ const AddService = () => {
          price: price
 
         }
-        fetch('http://localhost:5000/allservices', {
+        fetch('https://book-rider-server.vercel.app/allservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -77,7 +77,7 @@ const AddService = () => {
         </div>
       
          <div className='text-center mb-5'>
-        <input className='btn mt-4' type="submit" value="Submit Your Review" />
+        <input className='btn bg-orange-400 text-white mt-4' type="submit" value="Add service" />
         <ToastContainer/>
         </div>
     </form>

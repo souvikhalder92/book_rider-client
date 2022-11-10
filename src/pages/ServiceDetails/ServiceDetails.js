@@ -7,21 +7,22 @@ import useTitle from '../../hooks/useTitle';
 import AllReviews from './AllReviews';
 
 const ServiceDetails = () => {
-    const {_id,name,img,description,author,price,ratings,reviews} = useLoaderData();
+    const {_id,name,img,description,author,price,ratings,reviews,service} = useLoaderData();
+  
     const {user}  = useContext(AuthContext);
-    console.log(user);
     
     useTitle('Details');
     const [review,setReview] = useState([]);
+    console.log(review);
 
-    const url = `http://localhost:5000/reviews`;
+    const url = `https://book-rider-server.vercel.app/reviews`;
 
     useEffect(() =>{
        fetch(url)
        .then(res => res.json())
        .then(data => setReview(data) )
 
-    },[user?.email])
+    },[review])
     const handleReview = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -42,7 +43,7 @@ const ServiceDetails = () => {
             message,
             time
         }
-        fetch('http://localhost:5000/reviewsadd', {
+        fetch('https://book-rider-server.vercel.app/reviewsadd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -98,7 +99,7 @@ const ServiceDetails = () => {
 
 <div className='App'>
    <h1 className='text-yellow-600 font-bold text-3xl'>All Reviews: {review.length}</h1> 
-   <div className='grid grid-1 lg:grid-cols-3 gap-5 mt-5 mb-8'>
+   <div className='grid grid-1 lg:grid-cols-3 gap-5 mt-5 mb-10'>
    {
        
         review.sort((a,b) => a.time > b.time ? -1 : 1).map(review => <AllReviews
@@ -113,6 +114,7 @@ const ServiceDetails = () => {
     user?.uid ? 
     
     <>
+    <h1 className='mx-auto font-bold text-3xl'>Add Your Review</h1>
        <form onSubmit={handleReview} className="mt-5">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:border  lg:p-5   lg:border-slate-300 hover:border-stone-400 '>
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
@@ -123,7 +125,7 @@ const ServiceDetails = () => {
                 </div>
               
                  <div className='text-center mb-5'>
-                <input className='btn mt-4' type="submit" value="Submit Your Review" />
+                <input className='btn mt-4  bg-orange-400 text-white' type="submit" value="Submit Your Review" />
                 <ToastContainer/>
                 </div>
             </form>

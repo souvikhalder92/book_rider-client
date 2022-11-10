@@ -23,9 +23,25 @@ const Login = () => {
     .then(result =>{
         const user = result.user;
         console.log(user);
-        navigate(from,{replace: true});
-
-    })
+        const currentUser = {
+          email: user.email
+      }
+      console.log(currentUser);
+      //get jwt token
+      fetch('https://book-rider-server.vercel.app/jwt',{
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+      })
+      .then(res => res.json())
+      .then(data =>{
+          console.log(data);
+          localStorage.setItem('token',data.token);
+          navigate(from,{replace: true});
+      })
+      })
     .catch(error => console.log(error))
 
   }
@@ -48,7 +64,7 @@ const Login = () => {
         console.log(currentUser);
         form.reset();
         //get jwt token
-        fetch('http://localhost:5000/jwt',{
+        fetch('https://book-rider-server.vercel.app/jwt',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -93,12 +109,12 @@ const Login = () => {
             <div className="mb-2">
              <p className='text-left text-red-400'>{error}</p>            
             </div>
-            <button onClick={notify} type="submit" className="btn btn-success text-slate-800 font-bold mx-32">
+            <button onClick={notify} type="submit" className="btn btn-success text-slate-800 font-bold mx-16 lg:mx-32">
             Submit 
             </button>
           <ToastContainer/>
           </form>
-            <div className='mt-3 mx-10'>
+            <div className='mt-3 mx-0 lg:mx-10 '>
                 <p className='text-xl font-semibold'>OR,Login With Social Link</p>
             </div>
             <div className="flex justify-center  mt-3">
@@ -106,7 +122,7 @@ const Login = () => {
               <FaGoogle className="mr-3 text-sky-700"></FaGoogle>
             </button>
           </div>
-          <p className="text-slate-900 font-semibold mt-3 ml-12">
+          <p className="text-slate-900 font-semibold mt-3 ml-2 lg:ml-12">
               Are You New User? <Link to="/register" className="text-sky-800">
                Register
               </Link>

@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path:'/servicedetails/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/allservices/${params.id}`)
+                loader: ({params}) => fetch(`https://book-rider-server.vercel.app/allservices/${params.id}`)
             },
             {
                 path:'/login',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path:'/itemadd',
                 element:<PrivateRoute><AddService></AddService></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/allservices')
+                loader: () => fetch('https://book-rider-server.vercel.app/allservices')
             },
             {
                 path:'/reviewsadd',
