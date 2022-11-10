@@ -10,7 +10,7 @@ const Reviews = () => {
     const [review,setReview] = useState([]);
     useTitle('My Reviews');
    
-    const url = `http://localhost:5000/reviews?email=${user?.email}`;
+    const url = `http://localhost:5000/reviewsadd?email=${user?.email}`;
 
     useEffect(() =>{
        fetch(url,{
@@ -27,7 +27,7 @@ const Reviews = () => {
         const proceed = window.confirm('Are you sure to delete this?');
         if(proceed)
         {
-            fetch(`http://localhost:5000/reviews/${_id}`,{
+            fetch(`http://localhost:5000/reviewsadd/${_id}`,{
                 method: 'DELETE'
 
             })
@@ -48,7 +48,7 @@ const Reviews = () => {
 
     }
     const handleStatusUpdate = (_id) => {
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`http://localhost:5000/reviewsadd/${_id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json'

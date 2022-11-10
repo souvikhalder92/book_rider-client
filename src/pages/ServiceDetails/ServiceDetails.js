@@ -17,11 +17,7 @@ const ServiceDetails = () => {
     const url = `http://localhost:5000/reviews`;
 
     useEffect(() =>{
-       fetch(url,{
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-       })
+       fetch(url)
        .then(res => res.json())
        .then(data => setReview(data) )
 
@@ -46,7 +42,7 @@ const ServiceDetails = () => {
             message,
             time
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('http://localhost:5000/reviewsadd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

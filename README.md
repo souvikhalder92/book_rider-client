@@ -1,3 +1,27 @@
+# Project Name:
+ Book Rider
+# Live Link:
+ Live Demo: baki
+# Project Description
+## Technologies:
+* Tailwind CSS
+* Daisy UI
+* JS
+* ReactJs
+* React-Router
+* Font Awsome
+* React Toastify
+* Nodejs
+* Expressjs
+* Firebase Authentication
+* MongoDB
+## Features:
+* Dynamic and full stack website with Firebase Authentication System.
+* This website is fully functional and fully responsive for user.
+* Book Rider is online-based book review website.
+* User can review and add book services.
+* User can Login or Register in this site easily.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

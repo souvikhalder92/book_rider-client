@@ -15,7 +15,7 @@ const About = () => {
        best service.<br/></h1>
       <p className="py-3">This is for books lover.We try our <br/> best for people.</p>
       <p>Here people can review the books <br/> accordingly their thought.</p>
-      <button className="btn btn-primary mt-3">Get More Info</button>
+      <button className="btn btn-primary mt-3">Get In Touch</button>
     </div>
   </div>
 </div>
